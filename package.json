@@ -1,0 +1,24 @@
+{
+  "name": "fh-app",
+  "version": "0.1.1",
+  "dependencies": {
+    "express": "^4.10.2"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "latest",
+    "grunt-nodemon": "0.2.0",
+    "grunt-concurrent": "latest",
+    "turbo-test-runner": "0.3.3",
+    "proxyquire": "0.5.3",
+    "grunt-shell": "0.6.4",
+    "istanbul": "0.2.7",
+    "grunt-env": "~0.4.1",
+    "load-grunt-tasks": "~0.4.0",
+    "time-grunt": "~0.3.1",
+    "grunt-node-inspector": "~0.1.5",
+    "grunt-open": "~0.2.3",
+    "grunt-plato": "~1.0.0"
+  },
+  "license": "mit",
+  "private": "true"
+}
