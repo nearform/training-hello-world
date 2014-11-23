@@ -1,19 +1,10 @@
 var express = require('express');
-var mbaasApi = require('fh-mbaas-api');
-var mbaasExpress = mbaasApi.mbaasExpress();
-
 var app = express();
-app.use('/sys', mbaasExpress.sys([]));
-app.use('/mbaas', mbaasExpress.mbaas);
-app.use(mbaasExpress.fhmiddleware());
-app.use('/hello', require('lib/hello.js')());
 
-app.use('/', function(req, res){
-  res.end('Your Cloud App is Running');
-});
+var hello = require('lib/hello-route.js');
 
-app.use(mbaasExpress.errorHandler());
-
+// 'hello' GET endpoint
+app.get('/hello', hello.get);
 var server;
 
 exports.setUp = function(finish){
@@ -25,13 +16,9 @@ exports.setUp = function(finish){
 };
 
 exports.tearDown = function(finish) {
-  mbaasApi.db({
-    "act": "close"
-  }, function(err) {
-    if (server) {
-      server.close(function() {
-        finish();
-      });
-    }
-  });
+  if (server) {
+    server.close(function() {
+      finish();
+    });
+  }
 };

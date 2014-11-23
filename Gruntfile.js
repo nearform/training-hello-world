@@ -11,12 +11,6 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         }
-      },
-      html: {
-        files: ['public/views/**', 'app/views/**'],
-        options: {
-          livereload: true
-        }
       }
     },
     nodemon: {
@@ -46,7 +40,7 @@ module.exports = function(grunt) {
       options : {},
       // environment variables - see https://github.com/jsoverson/grunt-env for more information
       local: {
-        FH_USE_LOCAL_DB: true
+       
       }
     },
     'node-inspector': {
