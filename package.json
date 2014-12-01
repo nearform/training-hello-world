@@ -1,5 +1,5 @@
 {
-  "name": "fh-app",
+  "name": "helloworld-app",
   "version": "0.1.1",
   "dependencies": {
     "express": "^4.10.2"
